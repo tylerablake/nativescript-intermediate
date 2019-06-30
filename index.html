@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>60-120 with NativeScript + Angular</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background="#8E3B46">
+				<h2>60-120 with NativeScript + Angular</h2>
+
+				<div class="title-contact-info">
+					<p>
+						<a href="http://tylerablake.com" target="_blank">tylerablake.com</a>
+
+					</p>
+					<p>
+						<a href="http://twitter.com/TylerBlakeLOU" target="_blank">@TylerBlakeLOU</a></small>
+					</p>
+				</div>
+
+			</section>
+			<section data-background="#8E3B46">
+				<section>
+					<h2>About Me</h2>
+					<br>
+
+					<div class="left-content">
+						<p class="fragment">NativeScript developer @FocustApps</p>
+						<p class="fragment">Open Source Contributor</p>
+						<ul class="fragment">
+							<li>NS Market Samples</li>
+							<li>GitHub Issues</li>
+							<li>NS Community Slack</li>
+						</ul>
+					</div>
+					<div class="right-content fragment">
+						<img src="assets/images/crowdSurf.jpg" style="text-align: center;">
+					</div>
+				</section>
+			</section>
+
+			<section data-background="#8E3B46">
+				<section>
+					<h2>Agenda</h2>
+				</section>
+				<section>
+					<ul>
+						<li>
+							Review
+							<ul>
+								<li class="fragment">Data Binding</li>
+								<li class="fragment">Steps to Add New Pages</li>
+								<li class="fragment">Angular vs NS Routing</li>
+							</ul>
+						</li>
+						<li>
+							Demo
+							<ul>
+								<li class="fragment">Adding ActionBar Icon</li>
+								<li class="fragment">Set Up Tap Event</li>
+								<li class="fragment">Create Add-Car Page</li>
+								<li class="fragment">Navigate to Add-Car Page</li>
+								<li class="fragment">Configure 2 way binding</li>
+								<li class="fragment">Add a Car to Your Garage</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section data-background="#8E3B46">
+				<section>
+					<h2>Data Binding</h2>
+				</section>
+				<section>
+					<table>
+						<thead>
+							<tr>
+								<th>Type</th>
+								<th>Syntax</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="fragment">
+								<td>1 Way</td>
+								<td>[text]="Some text to show"</td>
+							</tr>
+							<tr class="fragment">
+								<td>1 Way (cont)</td>
+								<td>[color]="'isPaid' ? 'green' : 'red'"</td>
+							</tr>
+							<tr class="fragment">
+								<td>Interpolation</td>
+								<td>text="Total price is {{totalPrice}}.</td>
+							</tr>
+							<tr class="fragment">
+								<td>2 Way</td>
+								<td>[(ngModel)]="userName"</td>
+							</tr>
+							<tr class="fragment">
+								<td>Event</td>
+								<td>(tap)="someMethod(params,...)"</td>
+							</tr>
+						</tbody>
+					</table>
+					<aside class="notes">
+						<h4>1 Way</h4>
+						<p>Notice the square brackets</p>
+
+						<p>We can also use 1 way binding to conditionally change other properties like color,
+							backgroundColor, etc.</p>
+
+						<p>We can use interpolation 1 way binding as well to help format the data for our users</p>
+
+						<h4>2 Way</h4>
+						<p>Notice the banana in a box syntax</p>
+
+						<h4>Event</h4>
+						<p>You can attach events exposed by many UI Widgets, some common ones are tap, and loaded.</p>
+
+					</aside>
+				</section>
+
+			</section>
+			<section data-background="#8E3B46">
+				<section>
+					<h2>Adding a New Page</h2>
+				</section>
+				<section>
+					<ol>
+						<li>Create a folder inside of <b>/src/app</b> directory</li>
+						<li class="fragment">Add a code behind file <small>(add-car.component.ts)</small></li>
+						<li class="fragment">Add a template file <small>(add-car-component.html)</small></li>
+						<li class="fragment">Add a styling file <small>(add-car-component.css|scss)</small></li>
+						<li class="fragment">Import the component into your <small>(app.module.ts)</small></li>
+						<li class="fragment">Add a routing path in your <small>(app-routing.module.ts)</small></li>
+					</ol>
+				</section>
+			</section>
+			<section data-background="#8E3B46">
+				<section>
+					<h2>Routing</h2>
+				</section>
+				<section>
+					<p>NativeScript has its own RouterModule which extends the Angular RouterModule</p>
+					<br>
+					<p>Which provides the following:</p>
+					<li class="fragment">Native Navigation Transitions</li>
+					<li class="fragment">Back Navigation Handling</li>
+					<li class="fragment">Mobile Navigation Lifecycle</li>
+					<li class="fragment">Mobile Specific History</li>
+					<li class="fragment">Mobile Lateral Navigation Widgets</li>
+					<aside class="notes">
+							<h4>Native Navigation Transitions</h4>
+							<p>Notice the square brackets</p>						
+	
+							<h4>Back Navigation Handling</h4>
+							<p>The hardware back button on Android and the navigation bar back button on iOS.</p>
+	
+							<h4>Mobile Navigation Lifecycle</h4>
+							<p>View state preservation when navigating back</p>
+	
+							<h4>Mobile Specific History</h4>
+							<p>Keeping history per navigation controller instead of a global one</p>
+	
+							<h4>Mobile Lateral Navigation Widgets</h4>
+							<p>TabView, SideDrawer, Modal View, etc.</p>
+	
+						</aside>
+				</section>
+
+			</section>
+
+			<section data-background="#8E3B46">
+				<h2>Additional Resources</h2>
+				<br>
+				<ul>
+					<li class="fragment">
+						<a href="https://market.nativescript.org/" target="_blank">NS Marketplace (samples, templates,
+							demos)</a>
+					</li>
+					<li class="fragment">
+						<a href="https://www.nativescript.org/slack-invitation-form" target="_blank">NS Community Slack
+							(help and guidance)</a>
+					</li>
+					<li class="fragment">
+						<a href="https://docs.nativescript.org/" target="_blank">NS Docs</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true }
+			]
+		});
+
+	</script>
+</body>
+
+</html>
