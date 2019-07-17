@@ -78,7 +78,7 @@
 							<ul>
 								<li class="fragment">Data Binding</li>
 								<li class="fragment">Steps to Add New Pages</li>
-								<li class="fragment">Angular vs NS Routing</li>
+								<li class="fragment">Angular vs NS Differences</li>
 							</ul>
 						</li>
 						<li>
@@ -86,6 +86,7 @@
 							<ul>
 								<li class="fragment">Event Binding (tap)</li>
 								<li class="fragment">Navigation with Parameters</li>
+								<li class="fragment">1 Way Binding</li>
 								<li class="fragment">2 Way Binding</li>
 							</ul>
 						</li>
@@ -154,8 +155,8 @@
 					<ol>
 						<li>Create a folder inside of <b>/src/app</b> directory</li>
 						<li class="fragment">Add a code behind file <small>(add-car.component.ts)</small></li>
-						<li class="fragment">Add a template file <small>(add-car-component.html)</small></li>
-						<li class="fragment">Add a styling file <small>(add-car-component.css|scss)</small></li>
+						<li class="fragment">Add a template file <small>(add-car.component.html)</small></li>
+						<li class="fragment">Add a styling file <small>(add-car.component.css|scss)</small></li>
 						<li class="fragment">Import the component into your <small>(app.module.ts)</small></li>
 						<li class="fragment">Add a routing path in your <small>(app-routing.module.ts)</small></li>
 					</ol>
@@ -163,21 +164,23 @@
 			</section>
 			<section data-background="#8E3B46">
 				<section>
-					<h2>Routing</h2>
+					<h2>Angular vs NativeScript</h2>
 				</section>
 				<section>
+					<h2>Component Lifecycle</h2>
+					<br>
+					<img src="assets/images/component-lifecycle-comparison.png" height="80%" width="70%">
+				</section>
+				<section>
+					<h2>Routing</h2>
+					<br>
 					<p>NativeScript has its own RouterModule which extends the Angular RouterModule</p>
 					<br>
-					<p>Which provides the following:</p>
-					<li class="fragment">Native Navigation Transitions</li>
+					<p>Which provides the following:</p>					
 					<li class="fragment">Back Navigation Handling</li>
 					<li class="fragment">Mobile Navigation Lifecycle</li>
-					<li class="fragment">Mobile Specific History</li>
-					<li class="fragment">Mobile Lateral Navigation Widgets</li>
-					<aside class="notes">
-						<h4>Native Navigation Transitions</h4>
-						<p>Notice the square brackets</p>
-
+					<li class="fragment">Mobile Specific History</li>					
+					<aside class="notes">						
 						<h4>Back Navigation Handling</h4>
 						<p>The hardware back button on Android and the navigation bar back button on iOS.</p>
 
@@ -187,17 +190,19 @@
 						<h4>Mobile Specific History</h4>
 						<p>Keeping history per navigation controller instead of a global one</p>
 
-						<h4>Mobile Lateral Navigation Widgets</h4>
-						<p>TabView, SideDrawer, Modal View, etc.</p>
-
 					</aside>
+				</section>
+				<section>
+					<h2>Http Client</h2>
+					<br>
+					<p></p>
 				</section>
 
 			</section>
 
 			<section data-background="#8E3B46">
 				<section>
-					<h2>Demo Time!</h2>										
+					<h2>Demo Time!</h2>
 				</section>
 				<section data-background="#8E3B46">
 					<h4>What We'll Make</h4>
@@ -209,8 +214,8 @@
 					<p>Link to follow along: <a target="_blank" href="https://bit.ly/2Z4O0As">https://bit.ly/2Z4O0As</a>
 					</p>
 					<br>
-					<img src="assets/images/add-car-page-before-and-after-red.png" style="text-align: center;" height="70%"
-						width="70%">
+					<img src="assets/images/add-car-page-before-and-after-red.png" style="text-align: center;"
+						height="70%" width="70%">
 				</section>
 			</section>
 
