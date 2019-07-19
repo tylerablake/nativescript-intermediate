@@ -76,9 +76,9 @@
 						<li>
 							Review
 							<ul>
-								<li class="fragment">Data Binding</li>
-								<li class="fragment">Steps to Add New Pages</li>
 								<li class="fragment">Angular vs NS Differences</li>
+								<li class="fragment">Angular vs NS Similarities</li>
+								<li class="fragment">Code Sharing</li>
 							</ul>
 						</li>
 						<li>
@@ -98,9 +98,85 @@
 			</section>
 			<section data-background="#8E3B46">
 				<section>
-					<h2>Data Binding</h2>
+					<h2>Differences</h2>
 				</section>
 				<section>
+					<h2>Component Lifecycle</h2>
+					<br>
+					<img src="assets/images/component-lifecycle-comparison.png" height="80%" width="70%">
+				</section>
+				<section>
+					<h2>Routing</h2>
+					<br>
+					<p>NativeScript has its own RouterModule which extends the Angular RouterModule</p>
+					<br>
+					<p>Which provides the following:</p>
+					<li class="fragment">Back Navigation Handling</li>
+					<li class="fragment">Mobile Navigation Lifecycle</li>
+					<li class="fragment">Mobile Specific History</li>
+					<aside class="notes">
+						<h4>Back Navigation Handling</h4>
+						<p>The hardware back button on Android and the navigation bar back button on iOS.</p>
+
+						<h4>Mobile Navigation Lifecycle</h4>
+						<p>View state preservation when navigating back</p>
+
+						<h4>Mobile Specific History</h4>
+						<p>Keeping history per navigation controller instead of a global one</p>
+
+					</aside>
+				</section>
+				<section>
+					<h2>Http Client</h2>
+					<br>
+					<img class="fragment" src="assets/images/honest-abe.jpg" height="80%" width="80%">
+				</section>
+
+				<section>
+					<h2>UI</h2>
+					<aside class="notes">
+						<p>UI is very different for web vs mobile as you would expect</p>
+						<p>As mentioned in my 0-60 talk, NS has multiple layouts that you must use</p>
+						<p>You can use whatever layout you'd prefer but you must use one of those layouts</p>
+
+						<p>Also NS UI doesn't use html or the DOM, but rather it's own XML-esque markup</p>
+
+						<p>Some other differences exist such as buttons
+							<li>On the web, a button is an input element with type of button</li>
+							<li>In NativeScript we have a button XML element</li>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Workflow / Adding New Pages</h2>
+					<br>
+					<ol>
+						<li>Create a folder inside of <b>/src/app</b> directory</li>
+						<li class="fragment">Add a code behind file <small>(add-car.component.ts)</small></li>
+						<li class="fragment">Add a template file <small>(add-car.component.html)</small></li>
+						<li class="fragment">Add a styling file <small>(add-car.component.css|scss)</small></li>
+						<li class="fragment">Import the component into your <small>(app.module.ts)</small></li>
+						<li class="fragment">Add a routing path in your <small>(app-routing.module.ts)</small></li>
+					</ol>
+					<aside class="notes">
+						<p>There is not a way to automagically do this with the NS CLI currently</p>
+						<p>There is a way to do it using the NativeScript/Schematics in conjunction with the Angular CLI
+						</p>
+					</aside>
+				</section>
+
+
+			</section>
+
+			<section data-background="#8E3B46">
+				<section>
+					<h2>Similarities</h2>
+				</section>
+				<section>
+					<h2>Code Behind</h2>
+				</section>
+				<section>
+					<h2>Binding</h2>
 					<table>
 						<thead>
 							<tr>
@@ -146,65 +222,70 @@
 						<h4>Event</h4>
 						<p>You can attach events exposed by many UI Widgets, some common ones are tap, and loaded.</p>
 
+						<h4>Conditionals</h4>
+
+						<h4>Loops</h4>
+
+						<p>Little note about loops like NgFor...</p>
+						<p>You CAN use them, but that doesn't mean you should</p>
+						<p>It will get the job done but with NativeScript we have better solutions like the RadListView,
+							etc.</p>
 					</aside>
 				</section>
 
-			</section>
-			<section data-background="#8E3B46">
 				<section>
-					<h2>Adding a New Page</h2>
-				</section>
-				<section>
-					<ol>
-						<li>Create a folder inside of <b>/src/app</b> directory</li>
-						<li class="fragment">Add a code behind file <small>(add-car.component.ts)</small></li>
-						<li class="fragment">Add a template file <small>(add-car.component.html)</small></li>
-						<li class="fragment">Add a styling file <small>(add-car.component.css|scss)</small></li>
-						<li class="fragment">Import the component into your <small>(app.module.ts)</small></li>
-						<li class="fragment">Add a routing path in your <small>(app-routing.module.ts)</small></li>
-					</ol>
+					<h2>Styling</h2>
+					<br>
+					<ul>
+						<li>CSS</li>
+						<li>SASS</li>
+					</ul>
 					<aside class="notes">
-						<p>There is not a way to automagically do this with the NS CLI currently</p>
-						<p>There is a way to do it using the NativeScript/Schematics in conjunction with the Angular CLI</p>
+						<p>You can do inline styling but it is a little different</p>
+						<p>Instead of border-width:"1px";</p>
+						<p>You can do borderWidth="1"</p>
 					</aside>
 				</section>
 			</section>
+
 			<section data-background="#8E3B46">
 				<section>
-					<h2>Angular vs NativeScript</h2>
+					<img src="assets/images/code-sharing-shrug-meme.jpg">
 				</section>
 				<section>
-					<h2>Component Lifecycle</h2>
-					<br>
-					<img src="assets/images/component-lifecycle-comparison.png" height="80%" width="70%">
+					<h2>Code Sharing</h2>
 				</section>
 				<section>
-					<h2>Routing</h2>
-					<br>
-					<p>NativeScript has its own RouterModule which extends the Angular RouterModule</p>
-					<br>
-					<p>Which provides the following:</p>					
-					<li class="fragment">Back Navigation Handling</li>
-					<li class="fragment">Mobile Navigation Lifecycle</li>
-					<li class="fragment">Mobile Specific History</li>					
-					<aside class="notes">						
-						<h4>Back Navigation Handling</h4>
-						<p>The hardware back button on Android and the navigation bar back button on iOS.</p>
-
-						<h4>Mobile Navigation Lifecycle</h4>
-						<p>View state preservation when navigating back</p>
-
-						<h4>Mobile Specific History</h4>
-						<p>Keeping history per navigation controller instead of a global one</p>
-
+					<img src="assets/images/code-sharing-overview-diagram.png">
+					<aside class="notes">
+						<ul>
+							<li>Your navigation is very similar but the implementation of it is different</li>
+							<li>You can use the same code for pipes, directives, and services</li>
+							<li>* Be careful of what you are importing into those servies/directives *</li>
+							<li>Your css/sass varibles can be shared</li>
+							<li>Classes can be shared</li>
+							<li>Your code behind has the same "rules" as services for the most part</li>
+						</ul>
 					</aside>
 				</section>
 				<section>
-					<h2>Http Client</h2>
-					<br>
-					<img class="fragment" src="assets/images/honest-abe.jpg" height="80%" width="70%">
+					<h3>How can I have multiple template files for 1 code behind file?</h3>
 				</section>
-
+				<section>
+					<h2>Build Process</h2>
+					<br>
+					<img src="assets/images/code-sharing-build-process-diagram.png">
+					<aside class="notes">
+						<ul>
+							<li>For web builds, nothing changes, use the Angular CLI and done</li>
+							<br>
+							<li>For mobile builds, web pack creates a virtual file system</li>
+							<li>Then it overwrites the component.ts files with the respective platform specific
+								component.ios|android.ts file</li>
+							<li>Then it continues as normal</li>
+						</ul>
+					</aside>
+				</section>
 			</section>
 
 			<section data-background="#8E3B46">
